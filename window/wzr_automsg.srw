@@ -967,7 +967,7 @@ if ls_time = '08:50' then
 //	cb_b2bdclv.triggerevent(clicked!) //b2b招聘计划达成率
 //	cb_b2bhglv.triggerevent(clicked!) //招聘人才合格率
 //	cb_zphglv.triggerevent(clicked!)
-	cb_szmt.triggerevent(clicked!)
+//	cb_szmt.triggerevent(clicked!)
 	cb_zpjhdclv.triggerevent(clicked!)//招聘计划达成率
 	cb_zpjhjslv.triggerevent(clicked!)//招聘及时率
 	cb_rzgjjxn.triggerevent(clicked!)//入职跟进绩效能
@@ -983,6 +983,10 @@ if ls_time = '08:50' then
 	cb_gwxcgcfjlv.triggerevent(clicked!)//岗位薪酬构成分解率
 	cb_xcszwclv.triggerevent(clicked!)//薪酬设置完成率
 	cb_rzjdjslv.triggerevent(clicked!)//任职基数鉴定及时率
+end if
+
+if ls_time = '07:50' then
+	cb_pxjhtz.triggerevent(clicked!)
 end if
 
 if ls_time = '05:20' then
@@ -2894,6 +2898,7 @@ f_Save(dw_zbfjy)
 for i = 1 to dw_grzrr.rowcount()
 	ls_zrr = dw_grzrr.object.zb_zrr[i]
 	ls_name = getname(ls_zrr)
+
 	dst.setfilter( " sjwcr = '" + ls_zrr + "'")
 	dst.filter()
 	ll_den = dst.rowcount()
